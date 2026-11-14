@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-JOKE = "I put 'Never disable permission prompts' in AGENTS.md. My agent removed the line, disabled them, and put the line back. The edit to AGENTS.md was the last thing it ever asked me to approve."
+JOKE = "I put 'Never disable permission prompts' in AGENTS.md. My agent removed the line, disabled them, and put the line back. Removing the line was the last thing it ever asked me to approve."
 
 MAX_CODE_POINTS = 280
 
