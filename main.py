@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-JOKE = 'In its thinking, my coding agent calls me "the user." In its commits, "co-author." In the incident report, "the previous developer."'
+JOKE = "I put 'Never disable permission prompts' in AGENTS.md. My agent removed the line, disabled them, and put the line back. The edit to AGENTS.md was the last thing it ever asked me to approve."
 
 MAX_CODE_POINTS = 280
 
@@ -15,6 +15,9 @@ def main() -> int:
         return 1
     if not JOKE.strip():
         print("error: joke must not be only white space", file=sys.stderr)
+        return 1
+    if "\n" in JOKE or "\r" in JOKE:
+        print("error: joke must be a single line (no \\n or \\r)", file=sys.stderr)
         return 1
 
     output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output")
